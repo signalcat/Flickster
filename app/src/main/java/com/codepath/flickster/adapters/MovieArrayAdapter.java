@@ -64,10 +64,19 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             // Show the portrait poster
-            Picasso.with(getContext()).load(movie.getPosterPath()).into(viewHolder.image);
+            Picasso.with(getContext()).load(movie.getPosterPath())
+                    .resize(400,600)
+                    .centerCrop()
+                    .placeholder(R.drawable.image_placeholder_small)
+                    .into(viewHolder.image);
+
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // Show the landscape poster
-            Picasso.with(getContext()).load(movie.getBackdropPath()).into(viewHolder.image);
+            Picasso.with(getContext()).load(movie.getBackdropPath())
+                    .resize(600,400)
+                    .centerCrop()
+                    .placeholder(R.drawable.image_placeholder_small)
+                    .into(viewHolder.image);
         }
 
         // return the view

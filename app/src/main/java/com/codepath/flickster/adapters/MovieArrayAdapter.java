@@ -79,6 +79,8 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
                     .into(viewHolder.image);
         }
 
+
+
         // return the view
         return convertView;
     }

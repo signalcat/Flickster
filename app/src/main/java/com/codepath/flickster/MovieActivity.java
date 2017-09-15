@@ -1,8 +1,11 @@
 package com.codepath.flickster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.codepath.flickster.adapters.MovieArrayAdapter;
@@ -33,6 +36,16 @@ public class MovieActivity extends AppCompatActivity {
         movies = new ArrayList<>();
         movieAdapter = new MovieArrayAdapter(this, movies);
         lvItems.setAdapter(movieAdapter);
+
+        // If one row was clicked, pop up the fragmentdialog details of the movie.
+        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                Intent fragment = new Intent(MovieActivity.this, DialogDemoActivity.class);
+                startActivity(fragment);
+            }
+        });
+
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
         AsyncHttpClient client = new AsyncHttpClient();

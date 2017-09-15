@@ -37,15 +37,6 @@ public class MovieActivity extends AppCompatActivity {
         movieAdapter = new MovieArrayAdapter(this, movies);
         lvItems.setAdapter(movieAdapter);
 
-        // If one row was clicked, pop up the fragmentdialog details of the movie.
-        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                Intent fragment = new Intent(MovieActivity.this, DialogDemoActivity.class);
-                startActivity(fragment);
-            }
-        });
-
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -66,6 +57,23 @@ public class MovieActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+            }
+        });
+
+        // If one row was clicked, pop up details of the movie.
+
+        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // Get the movie details info
+                MovieDetails movie_details = new MovieDetails();
+                movie_details.setPopularity(movies.get(position).getPopularity());
+
+                // Start a new intent to show the details
+                Intent i = new Intent(MovieActivity.this, MovieDetailsActivity.class);
+                i.putExtra("movie_details",movie_details);
+                startActivity(i);
             }
         });
     }

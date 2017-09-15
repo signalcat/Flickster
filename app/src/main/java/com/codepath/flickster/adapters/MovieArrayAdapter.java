@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.codepath.flickster.R;
 import com.codepath.flickster.models.Movie;
 import com.squareup.picasso.Picasso;
@@ -33,7 +34,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // get the data item for position
+        // Get the data item for position
         Movie movie = getItem(position);
 
         // Check if an existing view is being used, otherwise inflate the view

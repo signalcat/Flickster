@@ -1,4 +1,4 @@
-package com.codepath.flickster;
+package com.codepath.flickster.models;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.codepath.flickster.R;
 
 /**
  * Created by hezhang on 9/14/17.

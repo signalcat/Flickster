@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.codepath.flickster.adapters.MovieArrayAdapter;
 import com.codepath.flickster.models.Movie;
+import com.codepath.flickster.models.MovieDetails;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -69,6 +70,9 @@ public class MovieActivity extends AppCompatActivity {
                 // Get the movie details info
                 MovieDetails movie_details = new MovieDetails();
                 movie_details.setPopularity(movies.get(position).getPopularity());
+                movie_details.setVoteAverage(movies.get(position).getVoteAverage());
+                movie_details.setReleaseDate(movies.get(position).getReleaseDate());
+                movie_details.setTitle(movies.get(position).getOriginalTitle());
 
                 // Start a new intent to show the details
                 Intent i = new Intent(MovieActivity.this, MovieDetailsActivity.class);

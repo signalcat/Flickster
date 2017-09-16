@@ -1,8 +1,11 @@
-package com.codepath.flickster;
+package com.codepath.flickster.models;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.codepath.flickster.R;
+
 /**
  * Created by hezhang on 9/14/17.
  */

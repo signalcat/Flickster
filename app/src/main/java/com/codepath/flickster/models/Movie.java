@@ -30,6 +30,10 @@ public class Movie {
 
     public String getPopularity() { return popularity; }
 
+    public String getVoteAverage() { return voteAverage; }
+
+    public String getReleaseDate() { return releaseDate;}
+
     // Portrait poster
     String posterPath;
     // Landscape poster
@@ -37,6 +41,8 @@ public class Movie {
     String originalTitle;
     String overview;
     String popularity;
+    String voteAverage;
+    String releaseDate;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
@@ -44,6 +50,8 @@ public class Movie {
         this.originalTitle = jsonObject.getString("original_title");
         this.overview = jsonObject.getString("overview");
         this.popularity = jsonObject.getString("popularity");
+        this.voteAverage = jsonObject.getString("vote_average");
+        this.releaseDate = jsonObject.getString("release_date");
     }
 
     public static ArrayList<Movie> fromJSONArray(JSONArray array) {

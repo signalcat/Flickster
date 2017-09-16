@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 /**
  * Created by hezhang on 9/12/17.
  */
@@ -66,6 +68,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             // Show the portrait poster
             Picasso.with(getContext()).load(movie.getPosterPath())
+                    .transform(new RoundedCornersTransformation(10,10))
                     .resize(400,600)
                     .centerCrop()
                     .placeholder(R.drawable.image_placeholder_small)
@@ -74,6 +77,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // Show the landscape poster
             Picasso.with(getContext()).load(movie.getBackdropPath())
+                    .transform(new RoundedCornersTransformation(10,10))
                     .resize(600,400)
                     .centerCrop()
                     .placeholder(R.drawable.image_placeholder_small)

@@ -34,7 +34,9 @@ public class Movie {
 
     public String getReleaseDate() { return releaseDate;}
 
-    // Portrait poster
+    public String getId() {return id;}
+
+    // Portrait
     String posterPath;
     // Landscape poster
     String backdropPath;
@@ -43,6 +45,7 @@ public class Movie {
     String popularity;
     String voteAverage;
     String releaseDate;
+    String id;
 
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
@@ -52,6 +55,7 @@ public class Movie {
         this.popularity = jsonObject.getString("popularity");
         this.voteAverage = jsonObject.getString("vote_average");
         this.releaseDate = jsonObject.getString("release_date");
+        this.id = jsonObject.getString("id");
     }
 
     public static ArrayList<Movie> fromJSONArray(JSONArray array) {

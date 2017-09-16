@@ -11,6 +11,7 @@ public class MovieDetails implements Serializable {
     private String voteAverage;
     private String releaseDate;
     private String title;
+    private String id;
 
     public String getTitle() {
         return title;
@@ -28,6 +29,10 @@ public class MovieDetails implements Serializable {
         return voteAverage;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public void setPopularity(String popularity) {
         this.popularity = popularity;
     }
@@ -42,5 +47,9 @@ public class MovieDetails implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

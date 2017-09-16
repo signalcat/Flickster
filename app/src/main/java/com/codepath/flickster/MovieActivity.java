@@ -73,7 +73,7 @@ public class MovieActivity extends AppCompatActivity {
                 movie_details.setVoteAverage(movies.get(position).getVoteAverage());
                 movie_details.setReleaseDate(movies.get(position).getReleaseDate());
                 movie_details.setTitle(movies.get(position).getOriginalTitle());
-
+                movie_details.setId(movies.get(position).getId());
                 // Start a new intent to show the details
                 Intent i = new Intent(MovieActivity.this, MovieDetailsActivity.class);
                 i.putExtra("movie_details",movie_details);

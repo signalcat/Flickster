@@ -20,12 +20,13 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivMovieImage"
         android:paddingLeft="10dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:text="Captain" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:paddingLeft="10dp"
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"

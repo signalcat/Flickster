@@ -19,13 +19,14 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:text="Captain"
         android:layout_alignParentTop="true"/>
 
     <TextView
+        android:textColor="@android:color/white"
         android:paddingLeft="10dp"
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
